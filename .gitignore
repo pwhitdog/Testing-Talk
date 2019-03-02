@@ -1,3 +1,6 @@
 # C# stuff
 obj
 bin
+
+# node
+node_modules
