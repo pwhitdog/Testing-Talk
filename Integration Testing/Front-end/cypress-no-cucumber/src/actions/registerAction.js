@@ -10,27 +10,27 @@ export const onRegister = ({password, username}) => {
             },
             data: JSON.stringify({email: username, password: password})
         })
-            .then(body => {
-                const registerResponse = JSON.parse(body);
-                return dispatch({
-                    type: SET_TOKEN,
-                    token: registerResponse.Token,
-                    roles: registerResponse.Roles,
-                    error: '',
-                    isLoggedIn: true
-                    }
-                );
-            })
-            .catch(error => {
-                console.log(error);
-                return dispatch({
-                    type: HANDLE_ERROR,
-                    error: error.toString(),
-                    roles: [],
-                    token: '',
-                    isLoggedIn: false
-                });
+        .then(body => {
+            const { Token, Roles } = body.data
+            return dispatch({
+                type: SET_TOKEN,
+                token: Token,
+                roles: Roles,
+                error: '',
+                isLoggedIn: true
+                }
+            );
+        })
+        .catch(error => {
+            console.log(error);
+            return dispatch({
+                type: HANDLE_ERROR,
+                error: error.toString(),
+                roles: [],
+                token: '',
+                isLoggedIn: false
             });
+        });
     };
 };
 
