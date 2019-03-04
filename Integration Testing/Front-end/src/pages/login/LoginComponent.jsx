@@ -5,16 +5,16 @@ import { onChangePassword, onChangeUsername, onLogin, onLogout } from '../../act
 import { UPDATE_PASSWORD, UPDATE_USERNAME } from '../../constants';
 
 const LoginComponent = props => {
-    const changeUsername = (event) => {
-        props.actions.onChangeUsername({username: event.currentTarget.value, type: UPDATE_USERNAME});
+    const changeUsername = event => {
+        props.actions.onChangeUsername(event.currentTarget.value, UPDATE_USERNAME);
     };
 
-    const changePassword = (event) => {
-        props.actions.onChangePassword({password: event.currentTarget.value, type: UPDATE_PASSWORD});
+    const changePassword = event => {
+        props.actions.onChangePassword(event.currentTarget.value, UPDATE_PASSWORD);
     };
 
     const login = () => {
-        props.actions.onLogin({username: props.username, password: props.password});
+        props.actions.onLogin(props.username, props.password);
     };
 
     return (

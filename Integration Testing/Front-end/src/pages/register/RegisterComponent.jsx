@@ -8,24 +8,24 @@ const RegisterComponent = props => {
 
     const changeUsername = event => {
         let username = event.currentTarget.value;
-        props.actions.onChangeUsername({username, type: UPDATE_USERNAME});
+        props.actions.onChangeUsername(username, UPDATE_USERNAME);
     };
 
     const changePassword1 = event => {
         let password1 = event.currentTarget.value;
-        props.actions.onChangePassword1({password1: password1, type: UPDATE_PASSWORD1});
+        props.actions.onChangePassword1(password1, UPDATE_PASSWORD1);
     };
 
     const changePassword2 = event => {
         let password2 = event.currentTarget.value;
-        props.actions.onChangePassword2({password2: password2, type: UPDATE_PASSWORD2});
+        props.actions.onChangePassword2(password2, UPDATE_PASSWORD2);
 
     };
 
     const register = () => {
         if (props.username !== '' && props.password1 !== '' && props.password2 !== '') {
             if (props.password1 === props.password2) {
-                props.actions.onRegister({password: props.password1, username: props.username});
+                props.actions.onRegister(props.password1, props.username);
             }
         }
     };
