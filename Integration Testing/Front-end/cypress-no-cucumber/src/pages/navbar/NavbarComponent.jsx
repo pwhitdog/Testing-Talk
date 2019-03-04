@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { onLogout } from '../../actions/loginAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,10 +19,10 @@ const NavbarComponent =props => {
     const notLoggedIn = (
         <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex float-right">
             <li className="nav-item">
-                <NavLink className="nav-link" to="login">Login</NavLink>
+                <Link className="nav-link" to="login">Login</Link>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" to="register">Register</NavLink>
+                <Link className="nav-link" to="register">Register</Link>
             </li>
         </ul>
     );
