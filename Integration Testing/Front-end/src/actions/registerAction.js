@@ -37,14 +37,14 @@ export const onRegister = ({password, username}) => {
 export const onChangePassword1 = (password1, type) => {
     return {
         type,
-        password1: password1
+        password1
     };
 };
 
 export const onChangePassword2 = (password2, type) => {
     return {
         type,
-        password2: password2
+        password2
     };
 };
 

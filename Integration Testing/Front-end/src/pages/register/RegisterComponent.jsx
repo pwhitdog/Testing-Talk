@@ -26,6 +26,7 @@ const RegisterComponent = props => {
         if (props.username !== '' && props.password1 !== '' && props.password2 !== '') {
             if (props.password1 === props.password2) {
                 props.actions.onRegister(props.password1, props.username);
+                window.location.assign('/')
             }
         }
     };
